@@ -5,6 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "compile": "esbuild --bundle --minify --platform=node --outfile=dist/api.js src/server.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register src/server.ts",
     "test": "jest --passWithNoTests tests",
     "lint": "eslint --cache --color --ext .ts src/**",
     "lint:fix": "eslint --cache --color --ext .ts --fix src/**"
@@ -33,6 +34,8 @@
     "jest": "^27.0.6",
     "supertest": "^6.1.4",
     "ts-jest": "^27.0.4",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.10.1",
     "typescript": "^4.3.5"
   },
   "dependencies": {
