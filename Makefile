@@ -10,4 +10,4 @@ down:
 	docker-compose down
 
 dev:
-	docker-compose run --no-deps --rm api pnpm run dev
+	docker-compose run --no-deps --rm api pnpm run test
