@@ -9,5 +9,5 @@ up:
 down:
 	docker-compose down
 
-dev:
+test:
 	docker-compose run --no-deps --rm api pnpm run test
