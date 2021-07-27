@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  api:
+  expressts-api:
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,4 +10,13 @@ services:
       - ${HOME}/.pnpm-store:/root/.pnpm-store
       - ${HOME}/.pnpm-state.json:/root/.pnpm-state.json
     ports:
-      - 8080:8080
+      - "8080:8080"
+
+  expressts-db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: expressts
+      POSTGRES_USER: expressts
+      POSTGRES_DB: expressts
+    ports:
+      - "5432:5432"

@@ -1,0 +1,20 @@
+{
+  "name": "default",
+  "type": "postgres",
+  "host": "expressts-db",
+  "port": 5432,
+  "username": "expressts",
+  "password": "expressts",
+  "database": "expressts",
+  "synchronize": false,
+  "logging": false,
+  "entities": [
+    "src/**/entity/**/*.ts"
+  ],
+  "migrations": [
+    "migrations/**/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "migrations"
+  }
+}

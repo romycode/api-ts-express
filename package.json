@@ -6,6 +6,7 @@
   "scripts": {
     "compile": "esbuild --bundle --minify --platform=node --outfile=dist/api.js src/server.ts",
     "dev": "ts-node-dev -r tsconfig-paths/register src/server.ts",
+    "typeorm": "node -r tsconfig-paths/register -r ts-node/register ./node_modules/typeorm/cli.js",
     "test": "jest --passWithNoTests tests",
     "lint": "eslint --cache --color --ext .ts src/**",
     "lint:fix": "eslint --cache --color --ext .ts --fix src/**"
@@ -34,6 +35,7 @@
     "jest": "^27.0.6",
     "supertest": "^6.1.4",
     "ts-jest": "^27.0.4",
+    "ts-node": "^10.1.0",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.10.1",
     "typescript": "^4.3.5"
@@ -42,6 +44,9 @@
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
-    "http-codes": "^1.0.0"
+    "http-codes": "^1.0.0",
+    "pg": "^8.6.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.34"
   }
 }
