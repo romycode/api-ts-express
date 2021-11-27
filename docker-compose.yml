@@ -1,22 +1,9 @@
-version: '3.9'
+version: '3.8'
 
 services:
-  expressts-api:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - ./:/opt/app
-      - ${HOME}/.pnpm-store:/root/.pnpm-store
-      - ${HOME}/.pnpm-state.json:/root/.pnpm-state.json
-    ports:
-      - "8080:8080"
-
-  expressts-db:
-    image: postgres:alpine
-    environment:
-      POSTGRES_PASSWORD: expressts
-      POSTGRES_USER: expressts
-      POSTGRES_DB: expressts
-    ports:
-      - "5432:5432"
+    express-api:
+        container_name: api_node-express
+        image: api_node-express
+        build:
+            context: .
+            dockerfile: docker/node-16.13.0/dev/Dockerfile

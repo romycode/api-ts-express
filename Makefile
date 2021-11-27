@@ -9,11 +9,14 @@ up:
 down:
 	docker-compose down
 
+deps:
+	docker-compose run --no-deps --rm express-api pnpm i
+
 migrate:
-	docker-compose run --no-deps --rm expressts-api pnpm run typeorm migration:run
+	docker-compose run --no-deps --rm express-api pnpm run typeorm migration:run
 
 test:
-	docker-compose run --no-deps --rm expressts-api pnpm run test
+	docker-compose run --no-deps --rm express-api pnpm run test
 
 bash:
-	docker-compose exec expressts-api /bin/ash
+	docker-compose run --no-deps --rm express-api /bin/bash
