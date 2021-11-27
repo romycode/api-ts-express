@@ -14,7 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(compression());
 
-app.get("/", welcomeController);
-app.get("/health", healthController);
+app.get("/", welcomeController.handle);
+app.get("/health", healthController.handle);
 
 export { app };
+ 
