@@ -8,12 +8,8 @@
   "database": "expressts",
   "synchronize": false,
   "logging": false,
-  "entities": [
-    "src/**/entity/**/*.ts"
-  ],
-  "migrations": [
-    "migrations/**/*.ts"
-  ],
+  "entities": ["src/**/entity/**/*.ts"],
+  "migrations": ["migrations/**/*.ts"],
   "cli": {
     "migrationsDir": "migrations"
   }
