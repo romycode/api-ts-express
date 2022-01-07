@@ -6,4 +6,4 @@ services:
         image: api_node-express
         build:
             context: .
-            dockerfile: docker/node-16.13.0/dev/Dockerfile
+            dockerfile: docker/node-lts/dev/Dockerfile

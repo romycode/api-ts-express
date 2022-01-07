@@ -1,15 +1,19 @@
 {
   "name": "default",
-  "type": "mysql",
+  "type": "postgres",
   "host": "expressts-db",
-  "port": 3306,
-  "username": "root",
+  "port": 5432,
+  "username": "test",
   "password": "password",
   "database": "expressts",
   "synchronize": false,
   "logging": false,
-  "entities": ["src/**/entity/**/*.ts"],
-  "migrations": ["migrations/**/*.ts"],
+  "entities": [
+    "src/**/entity/**/*.ts"
+  ],
+  "migrations": [
+    "migrations/**/*.ts"
+  ],
   "cli": {
     "migrationsDir": "migrations"
   }

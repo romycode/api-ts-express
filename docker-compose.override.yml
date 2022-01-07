@@ -4,30 +4,29 @@ services:
     express-api:
         build:
             context: .
-            dockerfile: docker/node-16.13.0/dev/Dockerfile
+            dockerfile: docker/node-lts/dev/Dockerfile
         volumes:
-            - ${PWD}:/opt/app
-            - ${HOME}/.pnpm-store:/root/.pnpm-store
+            - "${PWD}:/opt/app"
+            - "${HOME}/.pnpm-store:/root/.pnpm-store"
         depends_on:
             - expressts-db
         ports:
-            - "8080:8080"
-        networks: 
+            - "8090:8080"
+        networks:
             express-ts:
 
     expressts-db:
-        container_name: expressts-mysql_db
-        image: mysql:8
+        container_name: expressts-postgres_db
+        image: postgres
         restart: on-failure
-        command: --default-authentication-plugin=mysql_native_password
         volumes:
-            - db-storage:/var/lib/mysql
-            - ./docker/mysql-8/database:/docker-entrypoint-initdb.d
+            - db-storage:/var/lib/postgresql/data
         environment:
-            MYSQL_ROOT_PASSWORD: password
+            POSTGRES_USER: test
+            POSTGRES_PASSWORD: password
         ports:
-            - '3306:3306'
-        networks: 
+            - "5432:5432"
+        networks:
             express-ts:
 
 volumes:
