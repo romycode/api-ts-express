@@ -1,10 +1,13 @@
-import { Request, Response } from "express";
-import { OK } from "http-codes";
+import {Request, Response} from "express";
+import {OK} from "http-codes";
+import {prisma} from "@/app";
 
 class WelcomeController {
-  public handle(_req: Request, res: Response): void {
-    res.status(OK).json({ data: "Welcome to ExpressJS API" });
-  }
+    public async handle(_req: Request, res: Response): Promise<void> {
+        res
+            .status(OK)
+            .json( await prisma.user.findMany() );
+    }
 }
 
 export const welcomeController = new WelcomeController();

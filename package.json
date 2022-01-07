@@ -4,8 +4,8 @@
   "description": "Basic skeleton repo for api in nodejs using Express and Typescript",
   "main": "dist/app.js",
   "scripts": {
-    "compile": "esbuild --bundle --minify --platform=node --outfile=dist/api.js src/server.ts",
-    "dev": "ts-node-dev -r tsconfig-paths/register src/server.ts",
+    "compile": "esbuild --bundle --minify --platform=node --outfile=dist/api.js src/index.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register src/index.ts",
     "typeorm": "node -r tsconfig-paths/register -r ts-node/register ./node_modules/typeorm/cli.js",
     "test": "jest --passWithNoTests tests",
     "lint": "eslint --cache --color --ext .ts src/**",
@@ -33,6 +33,7 @@
     "esbuild": "^0.14.10",
     "eslint": "^8.6.0",
     "jest": "^27.4.7",
+    "prisma": "^3.7.0",
     "supertest": "^6.1.6",
     "ts-jest": "^27.1.2",
     "ts-node": "^10.4.0",
@@ -41,12 +42,11 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
+    "@prisma/client": "^3.7.0",
     "compression": "^1.7.4",
     "express": "^4.17.2",
     "helmet": "^5.0.1",
     "http-codes": "^1.0.0",
-    "pg": "^8.7.1",
-    "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.41"
+    "pg": "^8.7.1"
   }
 }

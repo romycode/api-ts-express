@@ -7,11 +7,12 @@ services:
             dockerfile: docker/node-lts/dev/Dockerfile
         volumes:
             - "${PWD}:/opt/app"
-            - "${HOME}/.pnpm-store:/root/.pnpm-store"
+            - "${HOME}/.pnpm-store:/opt/app/.pnpm-store"
         depends_on:
             - expressts-db
         ports:
             - "8090:8080"
+            - "5555:5555"
         networks:
             express-ts:
 
