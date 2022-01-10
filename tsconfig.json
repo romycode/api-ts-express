@@ -8,7 +8,10 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*", "tests/*"]
+      "@/*": [
+        "src/*",
+        "tests/*"
+      ]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -16,6 +19,11 @@
     "emitDecoratorMetadata": true,
     "resolveJsonModule": true
   },
-  "exclude": ["node_modules"],
-  "include": ["src/**/*", "tests/**/*"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*",
+    "tests/**/*"
+  ]
 }
