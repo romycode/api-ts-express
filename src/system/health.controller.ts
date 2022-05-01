@@ -4,8 +4,9 @@ import { prisma } from '@/app'
 import { Prisma } from '@prisma/client'
 
 class HealthController {
-  public handle (_req: Request, res: Response): void {
-    prisma.$queryRaw(Prisma.sql`SELECT 1+1`)
+  public handle(_req: Request, res: Response): void {
+    prisma
+      .$queryRaw(Prisma.sql`SELECT 1+1`)
       .then(() => res.status(OK).json({ data: 'Working' }))
       .catch(() => res.status(INTERNAL_SERVER_ERROR).json({ data: 'Not Working' }))
   }
